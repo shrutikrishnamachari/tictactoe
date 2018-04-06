@@ -1,6 +1,5 @@
 def twoplayer():
-    player_1 = "O"
-    player_2 = "X"
+
     win = False
 
     def printboard():
