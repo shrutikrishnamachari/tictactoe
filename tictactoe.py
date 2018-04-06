@@ -16,7 +16,7 @@ def twoplayer():
 
     board = [" "," "," "," "," "," "," "," "," "," "]
 
-    def player_1_move(move):
+    def player_1_move():
         move_number = input("Player One Choose a Spot from 1 - 9!")
         if board[int(move_number)] == " ":
             board[int(move_number)] = "O"
@@ -24,7 +24,7 @@ def twoplayer():
         else:
             print("This spot is taken! You have lost a turn!")
 
-    def player_2_move(move):
+    def player_2_move():
         move_number = input("Player Two Choose a Spot from 1 - 9!")
         if board[int(move_number)] == " ":
             board[int(move_number)] = "X"
@@ -59,13 +59,13 @@ def twoplayer():
             print( player + " WIN")
             win = True
 
-    i=1
+
     while win == False:
-        player_1_move(i)
+        player_1_move()
         check_win("O")
-        player_2_move(i)
-        check_win("X")
-        i+=1
+        if win == False:
+            player_2_move()
+            check_win("X")
 
 def one_player():
     player_1 = "O"
@@ -86,7 +86,7 @@ def one_player():
 
     board = [" ", " ", " ", " ", " ", " ", " ", " ", " ", " "]
 
-    def player_1_move(move):
+    def player_1_move():
         move_number = input("Player One Choose a Spot from 1 - 9!")
         if board[int(move_number)] == " ":
             board[int(move_number)] = "O"
@@ -94,7 +94,7 @@ def one_player():
         else:
             print("This spot is taken! You have lost a turn!")
 
-    def player_2_move(move):
+    def player_2_move():
         move_number = random.randint(1, 9)
         if board[int(move_number)] == " ":
             board[int(move_number)] = "X"
@@ -129,13 +129,14 @@ def one_player():
             print(player + " WIN")
             winn = True
 
-    i = 1
+
     while winn == False:
-        player_1_move(i)
+        player_1_move()
         check_win("O")
-        player_2_move(i)
-        check_win("X")
-        i += 1
+        if win == False:
+            player_2_move()
+            check_win("X")
+
 
 game_type = input("How many players: 1 or 2?")
 if game_type == '1':
