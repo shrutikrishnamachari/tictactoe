@@ -70,7 +70,7 @@ def twoplayer():
 def one_player():
     player_1 = "O"
     player_2 = "X"
-    win = False
+    winn = False
     import random
 
     def printboard():
@@ -103,34 +103,34 @@ def one_player():
             player_2_move(i)
 
     def check_win(player):
-        global win
+        global winn
         if board[1] == player and board[2] == player and board[3] == player:
             print(player + " WIN")
-            win = True
+            winn = True
         elif board[4] == player and board[5] == player and board[6] == player:
             print(player + " WIN")
-            win = True
+            winn = True
         elif board[7] == player and board[8] == player and board[9] == player:
             print(player + " WIN")
-            win = True
+            winn = True
         elif board[1] == player and board[4] == player and board[7] == player:
             print(player + " WIN")
-            win = True
+            winn = True
         elif board[2] == player and board[5] == player and board[8] == player:
             print(player + " WIN")
-            win = True
+            winn = True
         elif board[3] == player and board[6] == player and board[9] == player:
             print(player + " WIN")
-            win = True
+            winn = True
         elif board[1] == player and board[5] == player and board[9] == player:
             print(player + " WIN")
-            win = True
+            winn = True
         elif board[3] == player and board[5] == player and board[7] == player:
             print(player + " WIN")
-            win = True
+            winn = True
 
     i = 1
-    while win == False:
+    while winn == False:
         player_1_move(i)
         check_win("O")
         player_2_move(i)

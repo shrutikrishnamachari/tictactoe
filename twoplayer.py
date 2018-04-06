@@ -1,7 +1,6 @@
 player_1 = "O"
 player_2 = "X"
 win = False
-import random
 
 def printboard():
     print(' ' + board[7] + ' | ' + board[8] + ' | ' + board[9])
@@ -25,11 +24,12 @@ def player_1_move():
         print("This spot is taken! You have lost a turn!")
 
 def player_2_move():
-    move_number = random.randint(1,9)
+    move_number = input("Player Two Choose a Spot from 1 - 9!")
     if board[int(move_number)] == " ":
         board[int(move_number)] = "X"
         printboard()
-
+    else:
+        print("This spot is taken! You have lost a turn!")
 
 def check_win(player):
     global win
@@ -65,3 +65,4 @@ while win == False:
     if win == False:
         player_2_move()
         check_win("X")
+
